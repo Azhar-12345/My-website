@@ -1,189 +1,42 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online Calculators | Everyday Tools</title>
-<meta name="description" content="Use 15 free online calculators including percentage, age-independent math, scientific, fraction and more.">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Explore 175 free online calculators in 15 categories. Fast, simple and mobile-friendly tools."><title>175 Free Online Calculators | Tech World</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f7fc;color:#17243a}
-header{background:#102b50;color:white;padding:25px 15px;text-align:center}
-header h1{margin:0 0 8px;font-size:28px}
-header p{margin:0;color:#d7e7fa}
-main{max-width:850px;margin:25px auto;padding:15px}
-.panel{background:white;padding:22px;border-radius:15px;box-shadow:0 5px 25px #102b5012}
-label{display:block;font-weight:bold;margin:15px 0 7px}
-select,input{width:100%;padding:13px;border:1px solid #ccd7e5;border-radius:8px;font-size:16px;background:white}
-button{background:#0878d1;color:white;border:0;padding:13px 20px;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:18px;width:100%}
-button:hover{background:#075da5}
-.result{margin-top:20px;background:#eaf5ff;border-left:4px solid #0878d1;padding:16px;border-radius:8px;min-height:55px;overflow-wrap:anywhere}
-.small{font-size:13px;color:#65758a;line-height:1.6}
-footer{text-align:center;padding:25px;color:#64748b}
-</style>
-</head>
-<body>
-<header>
-<h1>Everyday Calculators</h1>
-<p>15 Free Online Calculators — Simple, Fast & Easy</p>
-</header>
-
-<main>
-<div class="panel">
-<h2>Select Your Calculator</h2>
-<label for="tool">Choose a tool</label>
-<select id="tool" onchange="renderTool()">
-<option value="basic">1. Basic Calculator</option>
-<option value="scientific">2. Scientific Calculator</option>
-<option value="simple">3. Simple Calculator</option>
-<option value="percentage">4. Percentage Calculator</option>
-<option value="fraction">5. Fraction Calculator</option>
-<option value="decimal">6. Decimal Calculator</option>
-<option value="average">7. Average Calculator</option>
-<option value="ratio">8. Ratio Calculator</option>
-<option value="proportion">9. Proportion Calculator</option>
-<option value="rounding">10. Rounding Calculator</option>
-<option value="square">11. Square Root Calculator</option>
-<option value="cube">12. Cube Root Calculator</option>
-<option value="power">13. Power Calculator</option>
-<option value="factorial">14. Factorial Calculator</option>
-<option value="random">15. Random Number Generator</option>
-</select>
-
-<div id="fields"></div>
-<button onclick="calculate()">Calculate</button>
-<div class="result" id="result">Your result will appear here.</div>
-<p class="small">Free browser-based calculators. No account or paid API required.</p>
-</div>
-</main>
-
-<footer>© 2026 Everyday Calculators</footer>
-
+:root{--navy:#10243e;--blue:#1769aa;--cyan:#19a7b8;--bg:#f3f7fb;--ink:#172b43;--muted:#66788a;--line:#e2eaf2;--white:#fff;--shadow:0 8px 24px rgba(16,36,62,.08)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}.hero{background:linear-gradient(125deg,#10243e,#1769aa 65%,#19a7b8);color:#fff;padding:34px 18px 30px;text-align:center}.wrap{max-width:1120px;margin:auto;padding:0 16px}.brand{font-size:13px;letter-spacing:2px;text-transform:uppercase;opacity:.85;font-weight:bold}.hero h1{font-size:clamp(27px,5vw,43px);margin:12px 0 9px}.hero p{margin:0 auto 22px;max-width:650px;line-height:1.6;color:#e6f5ff}.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.stat{background:#ffffff20;border:1px solid #ffffff38;padding:8px 14px;border-radius:30px;font-size:13px}.searchbox{max-width:720px;margin:24px auto 0;display:flex;background:#fff;padding:6px;border-radius:13px;box-shadow:0 10px 28px #06172b35}.searchbox input{flex:1;min-width:0;border:0;outline:0;padding:13px 12px;font-size:16px;color:var(--ink)}.searchbox button{border:0;border-radius:9px;padding:0 20px;background:#0b8f9f;color:white;font-weight:bold;font-size:15px;cursor:pointer}.main{padding:26px 0 55px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}.toolbar h2{margin:0;font-size:21px}.count{color:var(--muted);font-size:13px}.chips{display:flex;gap:8px;overflow-x:auto;padding:3px 0 15px;scrollbar-width:thin}.chip{white-space:nowrap;border:1px solid var(--line);background:#fff;color:#29445e;padding:9px 13px;border-radius:30px;cursor:pointer;font-size:13px}.chip.active,.chip:hover{background:var(--navy);color:#fff;border-color:var(--navy)}.category{margin:22px 0 30px;scroll-margin-top:12px}.cathead{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px;gap:10px}.cathead h3{font-size:19px;margin:0}.cathead span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.tool{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px 14px;min-height:116px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 2px 8px #10243e05;transition:.18s}.tool:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#b7d5e8}.tooltop{display:flex;align-items:center;gap:10px}.ico{width:38px;height:38px;border-radius:11px;background:#eaf5fb;display:grid;place-items:center;font-size:21px;flex-shrink:0}.tool h4{font-size:14px;line-height:1.35;margin:0;font-weight:700}.tool button{align-self:flex-start;border:0;background:transparent;color:var(--blue);font-weight:bold;font-size:12px;padding:10px 0 0;cursor:pointer}.empty{display:none;text-align:center;background:#fff;border:1px dashed #b9c9d8;padding:35px;border-radius:14px;color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}.modal{display:none;position:fixed;inset:0;background:#07182bd9;z-index:10;padding:18px;align-items:center;justify-content:center}.modal.show{display:flex}.dialog{background:#fff;width:min(100%,470px);max-height:90vh;overflow:auto;border-radius:18px;padding:22px;box-shadow:0 20px 60px #0005}.dialoghead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.dialog h2{font-size:21px;margin:0 0 6px}.dialog p{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 18px}.close{border:0;background:#edf2f7;border-radius:9px;width:35px;height:35px;font-size:20px;cursor:pointer}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:#52677c;font-weight:bold}.field input,.field select{width:100%;padding:12px;border:1px solid #d9e3ed;border-radius:9px;font-size:15px;outline-color:#2694c8}.calcbtn{width:100%;border:0;background:linear-gradient(100deg,#1769aa,#0b9ba8);color:#fff;padding:13px;border-radius:10px;font-weight:bold;font-size:15px;margin-top:15px;cursor:pointer}.result{display:none;margin-top:14px;background:#edf8f8;border:1px solid #ccebea;padding:14px;border-radius:10px}.result small{color:#54717b}.result strong{display:block;font-size:25px;color:#087d83;margin-top:4px;overflow-wrap:anywhere}.hint{font-size:11px;color:#8392a1;margin-top:12px;line-height:1.5}@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:600px){.hero{padding:27px 14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tool{padding:12px;min-height:110px}.tool h4{font-size:13px}.ico{width:34px;height:34px;font-size:19px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.searchbox button{padding:0 14px}.cathead h3{font-size:17px}}
+</style></head><body>
+<header class="hero"><div class="wrap"><div class="brand">TECH WORLD • FREE TOOLS</div><h1>175 Free Online Calculators</h1><p>Find the right calculator in seconds. Browse 15 useful categories and use our simple mobile-friendly calculator workspace.</p><div class="stats"><span class="stat">🧮 175 Calculators</span><span class="stat">📂 15 Categories</span><span class="stat">🆓 100% Free</span></div><div class="searchbox"><input id="search" type="search" placeholder="Search calculator... e.g. BMI, percentage, age" aria-label="Search calculators"><button id="searchBtn">Search 🔎</button></div></div></header>
+<main class="main wrap"><div class="toolbar"><h2>Explore Calculator Categories</h2><div class="count" id="count">Showing 175 calculators</div></div><nav class="chips" id="chips"></nav><div id="catalog"></div><div class="empty" id="empty">😕 No calculator found. Try another keyword.</div></main><footer class="footer">© 2026 Tech World • Free online calculator directory</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog"><div class="dialoghead"><div><h2 id="modalTitle">Calculator</h2><p id="modalDesc">Enter values below to calculate.</p></div><button class="close" id="close" aria-label="Close">×</button></div><div id="formArea"></div><div class="result" id="result"><small>Calculated result</small><strong id="resultValue">—</strong></div><div class="hint">Note: This calculator workspace provides a general calculation for the selected tool. For specialist estimates, check the result against the relevant professional or official source.</div></div></div>
 <script>
-const fields = document.getElementById("fields");
-const result = document.getElementById("result");
-
-const configs = {
-basic:[["First number","a"],["Second number","b"]],
-scientific:[["Enter expression (example: 2+3*4 or sqrt(25))","expression"]],
-simple:[["First number","a"],["Second number","b"]],
-percentage:[["What is the percentage?","a"],["Of which number?","b"]],
-fraction:[["First numerator","a"],["First denominator","b"],["Second numerator","c"],["Second denominator","d"]],
-decimal:[["First decimal number","a"],["Second decimal number","b"]],
-average:[["Enter numbers separated by commas","list"]],
-ratio:[["First ratio value","a"],["Second ratio value","b"]],
-proportion:[["A value","a"],["B value","b"],["C value","c"]],
-rounding:[["Number to round","a"],["Decimal places","b"]],
-square:[["Enter a number","a"]],
-cube:[["Enter a number","a"]],
-power:[["Base number","a"],["Power / exponent","b"]],
-factorial:[["Enter a whole number (0–170)","a"]],
-random:[["Minimum number","a"],["Maximum number","b"]]
-};
-
-function renderTool(){
- const tool=document.getElementById("tool").value;
- fields.innerHTML="";
- result.textContent="Your result will appear here.";
- configs[tool].forEach(item=>{
-  const label=document.createElement("label");
-  label.textContent=item[0];
-  const input=document.createElement("input");
-  input.id=item[1];
-  input.type="text";
-  input.placeholder=item[0];
-  fields.appendChild(label);
-  fields.appendChild(input);
- });
-}
-
-function val(id){
- const raw=document.getElementById(id).value.trim();
- if(raw==="") throw Error("Please fill in all fields.");
- const n=Number(raw);
- if(!Number.isFinite(n)) throw Error("Please enter a valid number.");
- return n;
-}
-function show(message){
- result.innerHTML="<strong>Result:</strong> "+message;
-}
-function calculate(){
- try{
-  const t=document.getElementById("tool").value;
-  let a,b,c,d,r;
-  if(t==="basic"||t==="simple"||t==="decimal"){
-   a=val("a"); b=val("b");
-   const op=prompt("Enter operation: +  -  *  /");
-   if(!["+","-","*","/"].includes(op)) throw Error("Invalid operation.");
-   if(op==="/"&&b===0) throw Error("Cannot divide by zero.");
-   r=op==="+"?a+b:op==="-"?a-b:op==="*"?a*b:a/b;
-  }
-  else if(t==="scientific"){
-   let exp=document.getElementById("expression").value.trim();
-   if(!exp) throw Error("Enter a mathematical expression.");
-   if(!/^[0-9+\-*/().\s%^]+$/.test(exp)) throw Error("Only numbers and + - * / ^ % ( ) are allowed.");
-   exp=exp.replace(/\^/g,"**");
-   r=Function('"use strict";return ('+exp+')')();
-   if(!Number.isFinite(r)) throw Error("Invalid expression.");
-  }
-  else if(t==="percentage"){
-   a=val("a"); b=val("b"); r=(a/100)*b;
-  }
-  else if(t==="fraction"){
-   a=val("a"); b=val("b"); c=val("c"); d=val("d");
-   if(b===0||d===0) throw Error("Denominator cannot be zero.");
-   const top=a*d+c*b, bottom=b*d;
-   r=top+"/"+bottom+" = "+(top/bottom);
-  }
-  else if(t==="average"){
-   const list=document.getElementById("list").value.split(",").map(x=>Number(x.trim()));
-   if(!list.length||list.some(x=>!Number.isFinite(x))) throw Error("Enter valid comma-separated numbers.");
-   r=list.reduce((s,n)=>s+n,0)/list.length;
-  }
-  else if(t==="ratio"){
-   a=val("a"); b=val("b");
-   if(a===0&&b===0) throw Error("Both values cannot be zero.");
-   const gcd=(x,y)=>y?gcd(y,x%y):Math.abs(x);
-   if(!Number.isInteger(a)||!Number.isInteger(b)) throw Error("Enter whole numbers for ratio simplification.");
-   const g=gcd(a,b); r=(a/g)+":"+(b/g);
-  }
-  else if(t==="proportion"){
-   a=val("a"); b=val("b"); c=val("c");
-   if(a===0) throw Error("A cannot be zero.");
-   r=(b*c)/a+" (X = B × C ÷ A)";
-  }
-  else if(t==="rounding"){
-   a=val("a"); b=val("b");
-   if(!Number.isInteger(b)||b<0||b>100) throw Error("Decimal places must be a whole number from 0 to 100.");
-   r=Number(a.toFixed(b));
-  }
-  else if(t==="square"){
-   a=val("a"); if(a<0) throw Error("Cannot calculate real square root of a negative number.");
-   r=Math.sqrt(a);
-  }
-  else if(t==="cube"){
-   a=val("a"); r=Math.cbrt(a);
-  }
-  else if(t==="power"){
-   a=val("a"); b=val("b"); r=Math.pow(a,b);
-   if(!Number.isFinite(r)) throw Error("Result is too large or not a real number.");
-  }
-  else if(t==="factorial"){
-   a=val("a");
-   if(!Number.isInteger(a)||a<0||a>170) throw Error("Enter a whole number from 0 to 170.");
-   r=1; for(let i=2;i<=a;i++) r*=i;
-  }
-  else if(t==="random"){
-   a=val("a"); b=val("b");
-   if(!Number.isInteger(a)||!Number.isInteger(b)||a>b) throw Error("Enter whole numbers; minimum must not exceed maximum.");
-   r=Math.floor(Math.random()*(b-a+1))+a;
-  }
-  if(typeof r==="number") r=Number(r.toPrecision(12));
-  show(r);
- }catch(e){result.textContent="Error: "+e.message;}
-}
-renderTool();
-</script>
-</body>
-</html>
+const tools = [{"name": "Basic Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Scientific Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Simple Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Fraction Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Mixed Number Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Decimal Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Rounding Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Ratio Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Proportion Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Average Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "date"}, {"name": "Mean Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Median Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Mode Calculator", "category": "Everyday & Basic", "emoji": "🧮", "type": "basic"}, {"name": "Percentage Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Percentage Increase Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Percentage Decrease Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Percentage Difference Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Percentage Change Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Percent Error Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Discount Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Markup Calculator", "category": "Percentage & Math", "emoji": "％", "type": "basic"}, {"name": "Sales Tax Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "VAT Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Tip Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Split Bill Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Compound Percentage Calculator", "category": "Percentage & Math", "emoji": "％", "type": "percent"}, {"name": "Loan Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Mortgage Calculator", "category": "Finance & Money", "emoji": "💰", "type": "date"}, {"name": "EMI Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Simple Interest Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Compound Interest Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Savings Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Investment Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "ROI Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Profit Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Loss Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Profit Margin Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Break-Even Calculator", "category": "Finance & Money", "emoji": "💰", "type": "finance"}, {"name": "Currency Budget Calculator", "category": "Finance & Money", "emoji": "💰", "type": "basic"}, {"name": "Sales Commission Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "finance"}, {"name": "Markup & Margin Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "finance"}, {"name": "Wholesale Price Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "basic"}, {"name": "Retail Price Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "basic"}, {"name": "Hourly Pay Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "finance"}, {"name": "Overtime Pay Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "finance"}, {"name": "Salary Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "finance"}, {"name": "Pay Raise Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "finance"}, {"name": "Price Per Unit Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "basic"}, {"name": "Unit Price Comparison", "category": "Business & Shopping", "emoji": "🛍️", "type": "basic"}, {"name": "GST Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "basic"}, {"name": "Shipping Cost Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "basic"}, {"name": "Purchase Discount Calculator", "category": "Business & Shopping", "emoji": "🛍️", "type": "percent"}, {"name": "BMI Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "BMR Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Calorie Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Ideal Weight Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Body Fat Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Lean Body Mass Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Daily Water Intake Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Protein Intake Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Carb Intake Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Fat Intake Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "basic"}, {"name": "Heart Rate Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Target Heart Rate Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "health"}, {"name": "Pace Calculator", "category": "Health & Fitness", "emoji": "💪", "type": "rate"}, {"name": "Age Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Date Difference Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Days Between Dates Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Add Days to Date", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Subtract Days from Date", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Time Duration Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Time Zone Difference Calculator", "category": "Age & Date", "emoji": "📅", "type": "basic"}, {"name": "Working Days Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Week Number Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Countdown Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Birthday Countdown", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Leap Year Checker", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Day of Week Calculator", "category": "Age & Date", "emoji": "📅", "type": "date"}, {"name": "Length Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Distance Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Height Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Inches to CM Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Feet to Meters Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Miles to KM Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "KM to Miles Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Meters to Feet Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Yards to Meters Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "CM to Inches Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "MM to Inches Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Nautical Miles Converter", "category": "Length & Distance", "emoji": "📏", "type": "convert"}, {"name": "Weight Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "health"}, {"name": "KG to LBS Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "LBS to KG Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Grams to Ounces Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Ounces to Grams Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Metric Tons Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Pounds to Stones Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Stones to Pounds Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "MG to Grams Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Carat Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Tons to KG Converter", "category": "Weight & Mass", "emoji": "⚖️", "type": "convert"}, {"name": "Temperature Converter", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Celsius to Fahrenheit", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Fahrenheit to Celsius", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Celsius to Kelvin", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Kelvin to Celsius", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Fahrenheit to Kelvin", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Kelvin to Fahrenheit", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Temperature Difference Calculator", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Oven Temperature Converter", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Body Temperature Converter", "category": "Temperature", "emoji": "🌡️", "type": "temperature"}, {"name": "Area Calculator", "category": "Area & Volume", "emoji": "📐", "type": "area"}, {"name": "Square Footage Calculator", "category": "Area & Volume", "emoji": "📐", "type": "date"}, {"name": "Acres to Hectares Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "Hectares to Acres Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "Square Meters Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "Volume Calculator", "category": "Area & Volume", "emoji": "📐", "type": "area"}, {"name": "Liters to Gallons Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "Gallons to Liters Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "ML to Liters Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "Cubic Feet Calculator", "category": "Area & Volume", "emoji": "📐", "type": "basic"}, {"name": "Cubic Meters Converter", "category": "Area & Volume", "emoji": "📐", "type": "convert"}, {"name": "Pool Volume Calculator", "category": "Area & Volume", "emoji": "📐", "type": "area"}, {"name": "Speed Converter", "category": "Speed & Fuel", "emoji": "🚗", "type": "convert"}, {"name": "MPH to KPH Converter", "category": "Speed & Fuel", "emoji": "🚗", "type": "convert"}, {"name": "KPH to MPH Converter", "category": "Speed & Fuel", "emoji": "🚗", "type": "convert"}, {"name": "Fuel Cost Calculator", "category": "Speed & Fuel", "emoji": "🚗", "type": "rate"}, {"name": "Fuel Efficiency Calculator", "category": "Speed & Fuel", "emoji": "🚗", "type": "rate"}, {"name": "MPG to KM/L Converter", "category": "Speed & Fuel", "emoji": "🚗", "type": "convert"}, {"name": "KM/L to MPG Converter", "category": "Speed & Fuel", "emoji": "🚗", "type": "convert"}, {"name": "Travel Cost Calculator", "category": "Speed & Fuel", "emoji": "🚗", "type": "basic"}, {"name": "Driving Time Calculator", "category": "Speed & Fuel", "emoji": "🚗", "type": "rate"}, {"name": "Pace to Speed Converter", "category": "Speed & Fuel", "emoji": "🚗", "type": "convert"}, {"name": "Cooking Measurement Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Cups to ML Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "ML to Cups Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Tablespoons to ML Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Teaspoons to ML Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Ounces to Cups Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Grams to Cups Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Recipe Scale Calculator", "category": "Cooking & Food", "emoji": "🍳", "type": "basic"}, {"name": "Ingredient Portion Calculator", "category": "Cooking & Food", "emoji": "🍳", "type": "basic"}, {"name": "Butter Converter", "category": "Cooking & Food", "emoji": "🍳", "type": "convert"}, {"name": "Paint Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Tile Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Concrete Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Flooring Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Wallpaper Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Roofing Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Brick Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Gravel Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Mulch Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Fence Calculator", "category": "Construction & Home", "emoji": "🏠", "type": "area"}, {"name": "Grade Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "grade"}, {"name": "GPA Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "grade"}, {"name": "Final Grade Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "grade"}, {"name": "Test Score Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "grade"}, {"name": "Weighted Average Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "health"}, {"name": "Standard Deviation Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "basic"}, {"name": "Variance Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "basic"}, {"name": "Probability Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "basic"}, {"name": "Permutation Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "basic"}, {"name": "Combination Calculator", "category": "Education & Statistics", "emoji": "🎓", "type": "basic"}, {"name": "Data Storage Converter", "category": "Tech & Digital", "emoji": "💻", "type": "date"}, {"name": "MB to GB Converter", "category": "Tech & Digital", "emoji": "💻", "type": "convert"}, {"name": "GB to MB Converter", "category": "Tech & Digital", "emoji": "💻", "type": "convert"}, {"name": "Mbps to MB/s Converter", "category": "Tech & Digital", "emoji": "💻", "type": "convert"}, {"name": "Download Time Calculator", "category": "Tech & Digital", "emoji": "💻", "type": "rate"}, {"name": "Aspect Ratio Calculator", "category": "Tech & Digital", "emoji": "💻", "type": "basic"}, {"name": "Screen Size Calculator", "category": "Tech & Digital", "emoji": "💻", "type": "basic"}, {"name": "Pixel Density Calculator", "category": "Tech & Digital", "emoji": "💻", "type": "basic"}, {"name": "Image File Size Estimator", "category": "Tech & Digital", "emoji": "💻", "type": "date"}, {"name": "Binary to Decimal Converter", "category": "Tech & Digital", "emoji": "💻", "type": "convert"}, {"name": "Decimal to Binary Converter", "category": "Tech & Digital", "emoji": "💻", "type": "convert"}, {"name": "Hexadecimal Converter", "category": "Tech & Digital", "emoji": "💻", "type": "convert"}];
+const catalog=document.getElementById('catalog'),chips=document.getElementById('chips'),search=document.getElementById('search'),count=document.getElementById('count'),empty=document.getElementById('empty');let active='All';
+const categories=['All',...new Set(tools.map(t=>t.category))];
+categories.forEach(c=>{const b=document.createElement('button');b.className='chip'+(c==='All'?' active':'');b.textContent=c==='All'?'✨ All Categories':c;b.onclick=()=>{active=c;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()};chips.appendChild(b)});
+function render(){const q=search.value.trim().toLowerCase();catalog.innerHTML='';let shown=0;categories.slice(1).forEach(cat=>{if(active!=='All'&&active!==cat)return;const list=tools.filter(t=>t.category===cat&&t.name.toLowerCase().includes(q));if(!list.length)return;shown+=list.length;const section=document.createElement('section');section.className='category';const head=document.createElement('div');head.className='cathead';head.innerHTML=`<h3>${list[0].emoji} ${cat}</h3><span>${list.length} tools</span>`;const grid=document.createElement('div');grid.className='grid';list.forEach(t=>{const card=document.createElement('article');card.className='tool';card.innerHTML=`<div class="tooltop"><div class="ico">${t.emoji}</div><h4>${t.name}</h4></div><button type="button">Open Calculator →</button>`;card.querySelector('button').onclick=()=>openTool(t);grid.appendChild(card)});section.append(head,grid);catalog.appendChild(section)});count.textContent=`Showing ${shown} of 175 calculators`;empty.style.display=shown?'none':'block'}
+function field(label,id,placeholder='Enter value',type='number'){return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}" ${type==='number'?'step="any"':''}></div>`}
+function openTool(t){document.getElementById('modalTitle').textContent=t.emoji+' '+t.name;document.getElementById('modalDesc').textContent='Enter the required values and select Calculate.';const area=document.getElementById('formArea');let fields='';let mode=t.type;
+if(mode==='percent'){fields=field('Original amount','a')+field('Percentage (%)','b')+`<div class="field full"><label for="operation">Calculation</label><select id="operation"><option value="percent">Find percentage of amount</option><option value="discount">Subtract percentage (discount)</option><option value="increase">Add percentage (increase)</option></select></div>`}
+else if(mode==='health'){fields=field('First value (e.g. weight in kg)','a')+field('Second value (e.g. height in cm)','b')+`<div class="field full"><label>Tip</label><div style="font-size:12px;color:#687d90">For BMI: enter weight in kg and height in cm. Other health tools use a general two-value calculation.</div></div>`}
+else if(mode==='date'){fields=field('Date of birth / start date','a','','date')+field('End date (optional)','b','','date')}
+else if(mode==='temperature'){fields=field('Temperature value','a')+`<div class="field"><label for="operation">Convert from</label><select id="operation"><option value="c-f">Celsius → Fahrenheit</option><option value="f-c">Fahrenheit → Celsius</option><option value="c-k">Celsius → Kelvin</option><option value="k-c">Kelvin → Celsius</option><option value="f-k">Fahrenheit → Kelvin</option><option value="k-f">Kelvin → Fahrenheit</option></select></div>`}
+else if(mode==='finance'){fields=field('Principal / amount','a')+field('Annual rate (%)','b')+field('Time (years)','c')+`<div class="field full"><label for="operation">Calculation</label><select id="operation"><option value="simple">Simple interest</option><option value="compound">Compound interest (annual)</option></select></div>`}
+else if(mode==='grade'){fields=field('Marks obtained','a')+field('Total marks','b')}
+else if(mode==='area'){fields=field('Length / first value','a')+field('Width / second value','b')}
+else if(mode==='rate'){fields=field('Distance / amount','a')+field('Time / rate','b')}
+else if(mode==='convert'){fields=field('Value to convert','a')+`<div class="field"><label for="operation">Conversion</label><select id="operation"><option value="km-mi">Kilometers → Miles</option><option value="mi-km">Miles → Kilometers</option><option value="kg-lb">Kilograms → Pounds</option><option value="lb-kg">Pounds → Kilograms</option><option value="cm-in">Centimeters → Inches</option><option value="in-cm">Inches → Centimeters</option><option value="m-ft">Meters → Feet</option><option value="ft-m">Feet → Meters</option><option value="l-gal">Liters → US Gallons</option><option value="gal-l">US Gallons → Liters</option><option value="mb-gb">MB → GB</option><option value="gb-mb">GB → MB</option></select></div>`}
+else{fields=field('First number','a')+field('Second number','b')+`<div class="field full"><label for="operation">Operation</label><select id="operation"><option value="add">Addition (+)</option><option value="sub">Subtraction (−)</option><option value="mul">Multiplication (×)</option><option value="div">Division (÷)</option><option value="avg">Average</option><option value="ratio">Ratio (A ÷ B)</option></select></div>`}
+area.innerHTML=`<div class="fields">${fields}</div><button class="calcbtn" id="calculate">Calculate Result</button>`;document.getElementById('result').style.display='none';document.getElementById('calculate').onclick=()=>calculate(mode);document.getElementById('modal').classList.add('show')}
+function val(id){const x=document.getElementById(id);return x?Number(x.value):0}function fmt(n){return Number.isFinite(n)?Number(n.toFixed(6)).toLocaleString(undefined,{maximumFractionDigits:6}):'Please check your inputs'}
+function calculate(mode){let a=val('a'),b=val('b'),c=val('c'),op=document.getElementById('operation')?.value,r;
+if(mode==='percent'){r=op==='discount'?a-a*b/100:op==='increase'?a+a*b/100:a*b/100}
+else if(mode==='health'){if(document.getElementById('modalTitle').textContent.toLowerCase().includes('bmi'))r=a/((b/100)**2);else r=b?a/b:NaN}
+else if(mode==='date'){const d1=new Date(document.getElementById('a').value),d2=document.getElementById('b').value?new Date(document.getElementById('b').value):new Date();r=Math.floor(Math.abs(d2-d1)/86400000);}
+else if(mode==='temperature'){r=({'c-f':a*9/5+32,'f-c':(a-32)*5/9,'c-k':a+273.15,'k-c':a-273.15,'f-k':(a-32)*5/9+273.15,'k-f':(a-273.15)*9/5+32})[op]}
+else if(mode==='finance'){r=op==='compound'?a*Math.pow(1+b/100,c):a*(1+(b/100)*c)}
+else if(mode==='grade'){r=b?a/b*100:NaN}
+else if(mode==='area'){r=a*b}
+else if(mode==='rate'){r=b?a/b:NaN}
+else if(mode==='convert'){r=({'km-mi':a*.621371,'mi-km':a/ .621371,'kg-lb':a*2.20462,'lb-kg':a/2.20462,'cm-in':a/2.54,'in-cm':a*2.54,'m-ft':a*3.28084,'ft-m':a/3.28084,'l-gal':a*.264172,'gal-l':a/ .264172,'mb-gb':a/1024,'gb-mb':a*1024})[op]}
+else{r=({add:a+b,sub:a-b,mul:a*b,div:b?a/b:NaN,avg:(a+b)/2,ratio:b?a/b:NaN})[op]}
+let suffix=mode==='percent'||mode==='grade'?'%':mode==='health'&&document.getElementById('modalTitle').textContent.toLowerCase().includes('bmi')?' BMI':mode==='date'?' days':'';document.getElementById('resultValue').textContent=fmt(r)+suffix;document.getElementById('result').style.display='block'}
+document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('show');document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')e.currentTarget.classList.remove('show')};document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('modal').classList.remove('show')});document.getElementById('searchBtn').onclick=render;search.addEventListener('input',render);render();
+</script></body></html>
