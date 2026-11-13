@@ -4,63 +4,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tech World - Latest Technology & Gadgets</title>
-<meta name="description" content="Discover the latest technology, gadgets, product reviews and helpful tech guides.">
+<meta name="description" content="Explore free online calculators, technology guides, gadget reviews and useful digital tools.">
+<title>Tech World - Free Online Tools & Technology</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{background:#102b46;color:white;padding:24px 6%;text-align:center}
-header h1{margin:0;font-size:30px}
-nav{background:#087e8b;padding:14px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 12px;font-weight:bold}
-.hero{padding:65px 7%;text-align:center;background:#e4f4f5}
-.hero h2{font-size:34px;color:#102b46}
-.hero p{font-size:17px;line-height:1.7}
-.container{max-width:1050px;margin:35px auto;padding:0 18px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{background:white;padding:24px;border-radius:12px;box-shadow:0 3px 15px #00000010}
-.card h3{color:#087e8b}
-footer{background:#102b46;color:white;text-align:center;padding:25px;margin-top:40px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+  line-height: 1.6;
+}
+header {
+  background: #10243e;
+  color: white;
+  padding: 22px 16px;
+  text-align: center;
+}
+header h1 {
+  font-size: 30px;
+}
+header p {
+  color: #cbd9e9;
+  margin-top: 5px;
+}
+nav {
+  background: #183b60;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 14px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  color: #55d6be;
+}
+.hero {
+  text-align: center;
+  padding: 55px 18px;
+  background: linear-gradient(135deg, #123b68, #0878d1);
+  color: white;
+}
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  color: #e4f1ff;
+}
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 30px 16px;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 22px;
+  color: #123b68;
+  font-size: 26px;
+}
+.calculator-box {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 18px;
+  text-align: center;
+  box-shadow: 0 5px 22px rgba(0,0,0,0.07);
+  border: 1px solid #e1eaf4;
+  margin-bottom: 30px;
+}
+.calculator-box h3 {
+  font-size: 24px;
+  color: #123b68;
+  margin-bottom: 10px;
+}
+.calculator-box p {
+  color: #586579;
+  margin-bottom: 20px;
+}
+.main-button {
+  display: inline-block;
+  background: #0878d1;
+  color: white;
+  padding: 13px 25px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.main-button:hover {
+  background: #065da5;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: white;
+  padding: 23px;
+  border-radius: 13px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #e7edf5;
+}
+.card h3 {
+  color: #0878d1;
+  margin-bottom: 8px;
+}
+.card p {
+  color: #64748b;
+  font-size: 14px;
+}
+footer {
+  background: #10243e;
+  color: #d5e1ee;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 35px;
+}
+footer p {
+  font-size: 14px;
+}
+@media(max-width:600px) {
+  header h1 { font-size: 25px; }
+  .hero h2 { font-size: 26px; }
+  nav { gap: 15px; }
+  nav a { font-size: 14px; }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<h1>TECH WORLD</h1>
-<p>Your Daily Destination for Technology & Gadgets</p>
+  <h1>🌐 Tech World</h1>
+  <p>Your Digital World of Tools, Technology & Knowledge</p>
 </header>
+
 <nav>
-<a href="#">Home</a>
-<a href="#reviews">Reviews</a>
-<a href="#guides">Tech Guides</a>
-<a href="#about">About</a>
+  <a href="index.html">Home</a>
+  <a href="#tools">Free Tools</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#guides">Tech Guides</a>
+  <a href="#about">About</a>
 </nav>
+
 <section class="hero">
-<h2>Explore the World of Technology</h2>
-<p>Discover the latest gadgets, honest product reviews and useful technology guides.</p>
+  <h2>Welcome to Tech World</h2>
+  <p>Discover useful online tools, free calculators, technology tips and helpful gadget information — all in one place.</p>
 </section>
+
 <main class="container">
-<h2>Latest Articles</h2>
-<div class="cards" id="reviews">
-<div class="card">
-<h3>Latest Gadgets</h3>
-<p>Explore new technology and exciting gadgets from around the world.</p>
-</div>
-<div class="card" id="guides">
-<h3>Technology Guides</h3>
-<p>Learn useful tips, tricks and tutorials to improve your tech knowledge.</p>
-</div>
-<div class="card">
-<h3>Product Reviews</h3>
-<p>Read detailed reviews and discover features of popular tech products.</p>
-</div>
-</div>
-<section id="about">
-<h2>About Us</h2>
-<p>Tech World shares technology news, gadget information and helpful guides for readers worldwide.</p>
-</section>
+
+  <h2 class="section-title" id="tools">🚀 Explore Our Free Tools</h2>
+
+  <section class="calculator-box">
+    <h3>🧮 15 Free Online Calculators</h3>
+    <p>Calculate percentages, averages, fractions, powers, square roots and much more. Fast, simple and completely free.</p>
+    <a class="main-button" href="calculators.html">Open Free Calculators →</a>
+  </section>
+
+  <h2 class="section-title">Explore Tech World</h2>
+
+  <section class="grid">
+
+    <div class="card" id="reviews">
+      <h3>📱 Gadget Reviews</h3>
+      <p>Explore useful technology products, gadget features and detailed reviews.</p>
+    </div>
+
+    <div class="card" id="guides">
+      <h3>💡 Tech Guides</h3>
+      <p>Learn about technology, internet tools, apps and useful digital tips.</p>
+    </div>
+
+    <div class="card" id="about">
+      <h3>🌍 About Tech World</h3>
+      <p>Our goal is to make technology and useful online tools easy for everyone.</p>
+    </div>
+
+  </section>
+
 </main>
+
 <footer>
-<p>© 2026 Tech World. All Rights Reserved.</p>
+  <p>© 2026 Tech World. All Rights Reserved.</p>
+  <p>Free Online Tools | Technology | Digital Guides</p>
 </footer>
+
 </body>
 </html>
