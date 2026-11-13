@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azhar-12345.github.io/My-website/sitemap.xml
