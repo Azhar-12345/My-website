@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Calculators | Everyday Tools</title>
+<meta name="description" content="Use 15 free online calculators including percentage, age-independent math, scientific, fraction and more.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f7fc;color:#17243a}
+header{background:#102b50;color:white;padding:25px 15px;text-align:center}
+header h1{margin:0 0 8px;font-size:28px}
+header p{margin:0;color:#d7e7fa}
+main{max-width:850px;margin:25px auto;padding:15px}
+.panel{background:white;padding:22px;border-radius:15px;box-shadow:0 5px 25px #102b5012}
+label{display:block;font-weight:bold;margin:15px 0 7px}
+select,input{width:100%;padding:13px;border:1px solid #ccd7e5;border-radius:8px;font-size:16px;background:white}
+button{background:#0878d1;color:white;border:0;padding:13px 20px;border-radius:8px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:18px;width:100%}
+button:hover{background:#075da5}
+.result{margin-top:20px;background:#eaf5ff;border-left:4px solid #0878d1;padding:16px;border-radius:8px;min-height:55px;overflow-wrap:anywhere}
+.small{font-size:13px;color:#65758a;line-height:1.6}
+footer{text-align:center;padding:25px;color:#64748b}
+</style>
+</head>
+<body>
+<header>
+<h1>Everyday Calculators</h1>
+<p>15 Free Online Calculators — Simple, Fast & Easy</p>
+</header>
+
+<main>
+<div class="panel">
+<h2>Select Your Calculator</h2>
+<label for="tool">Choose a tool</label>
+<select id="tool" onchange="renderTool()">
+<option value="basic">1. Basic Calculator</option>
+<option value="scientific">2. Scientific Calculator</option>
+<option value="simple">3. Simple Calculator</option>
+<option value="percentage">4. Percentage Calculator</option>
+<option value="fraction">5. Fraction Calculator</option>
+<option value="decimal">6. Decimal Calculator</option>
+<option value="average">7. Average Calculator</option>
+<option value="ratio">8. Ratio Calculator</option>
+<option value="proportion">9. Proportion Calculator</option>
+<option value="rounding">10. Rounding Calculator</option>
+<option value="square">11. Square Root Calculator</option>
+<option value="cube">12. Cube Root Calculator</option>
+<option value="power">13. Power Calculator</option>
+<option value="factorial">14. Factorial Calculator</option>
+<option value="random">15. Random Number Generator</option>
+</select>
+
+<div id="fields"></div>
+<button onclick="calculate()">Calculate</button>
+<div class="result" id="result">Your result will appear here.</div>
+<p class="small">Free browser-based calculators. No account or paid API required.</p>
+</div>
+</main>
+
+<footer>© 2026 Everyday Calculators</footer>
+
+<script>
+const fields = document.getElementById("fields");
+const result = document.getElementById("result");
+
+const configs = {
+basic:[["First number","a"],["Second number","b"]],
+scientific:[["Enter expression (example: 2+3*4 or sqrt(25))","expression"]],
+simple:[["First number","a"],["Second number","b"]],
+percentage:[["What is the percentage?","a"],["Of which number?","b"]],
+fraction:[["First numerator","a"],["First denominator","b"],["Second numerator","c"],["Second denominator","d"]],
+decimal:[["First decimal number","a"],["Second decimal number","b"]],
+average:[["Enter numbers separated by commas","list"]],
+ratio:[["First ratio value","a"],["Second ratio value","b"]],
+proportion:[["A value","a"],["B value","b"],["C value","c"]],
+rounding:[["Number to round","a"],["Decimal places","b"]],
+square:[["Enter a number","a"]],
+cube:[["Enter a number","a"]],
+power:[["Base number","a"],["Power / exponent","b"]],
+factorial:[["Enter a whole number (0–170)","a"]],
+random:[["Minimum number","a"],["Maximum number","b"]]
+};
+
+function renderTool(){
+ const tool=document.getElementById("tool").value;
+ fields.innerHTML="";
+ result.textContent="Your result will appear here.";
+ configs[tool].forEach(item=>{
+  const label=document.createElement("label");
+  label.textContent=item[0];
+  const input=document.createElement("input");
+  input.id=item[1];
+  input.type="text";
+  input.placeholder=item[0];
+  fields.appendChild(label);
+  fields.appendChild(input);
+ });
+}
+
+function val(id){
+ const raw=document.getElementById(id).value.trim();
+ if(raw==="") throw Error("Please fill in all fields.");
+ const n=Number(raw);
+ if(!Number.isFinite(n)) throw Error("Please enter a valid number.");
+ return n;
+}
+function show(message){
+ result.innerHTML="<strong>Result:</strong> "+message;
+}
+function calculate(){
+ try{
+  const t=document.getElementById("tool").value;
+  let a,b,c,d,r;
+  if(t==="basic"||t==="simple"||t==="decimal"){
+   a=val("a"); b=val("b");
+   const op=prompt("Enter operation: +  -  *  /");
+   if(!["+","-","*","/"].includes(op)) throw Error("Invalid operation.");
+   if(op==="/"&&b===0) throw Error("Cannot divide by zero.");
+   r=op==="+"?a+b:op==="-"?a-b:op==="*"?a*b:a/b;
+  }
+  else if(t==="scientific"){
+   let exp=document.getElementById("expression").value.trim();
+   if(!exp) throw Error("Enter a mathematical expression.");
+   if(!/^[0-9+\-*/().\s%^]+$/.test(exp)) throw Error("Only numbers and + - * / ^ % ( ) are allowed.");
+   exp=exp.replace(/\^/g,"**");
+   r=Function('"use strict";return ('+exp+')')();
+   if(!Number.isFinite(r)) throw Error("Invalid expression.");
+  }
+  else if(t==="percentage"){
+   a=val("a"); b=val("b"); r=(a/100)*b;
+  }
+  else if(t==="fraction"){
+   a=val("a"); b=val("b"); c=val("c"); d=val("d");
+   if(b===0||d===0) throw Error("Denominator cannot be zero.");
+   const top=a*d+c*b, bottom=b*d;
+   r=top+"/"+bottom+" = "+(top/bottom);
+  }
+  else if(t==="average"){
+   const list=document.getElementById("list").value.split(",").map(x=>Number(x.trim()));
+   if(!list.length||list.some(x=>!Number.isFinite(x))) throw Error("Enter valid comma-separated numbers.");
+   r=list.reduce((s,n)=>s+n,0)/list.length;
+  }
+  else if(t==="ratio"){
+   a=val("a"); b=val("b");
+   if(a===0&&b===0) throw Error("Both values cannot be zero.");
+   const gcd=(x,y)=>y?gcd(y,x%y):Math.abs(x);
+   if(!Number.isInteger(a)||!Number.isInteger(b)) throw Error("Enter whole numbers for ratio simplification.");
+   const g=gcd(a,b); r=(a/g)+":"+(b/g);
+  }
+  else if(t==="proportion"){
+   a=val("a"); b=val("b"); c=val("c");
+   if(a===0) throw Error("A cannot be zero.");
+   r=(b*c)/a+" (X = B × C ÷ A)";
+  }
+  else if(t==="rounding"){
+   a=val("a"); b=val("b");
+   if(!Number.isInteger(b)||b<0||b>100) throw Error("Decimal places must be a whole number from 0 to 100.");
+   r=Number(a.toFixed(b));
+  }
+  else if(t==="square"){
+   a=val("a"); if(a<0) throw Error("Cannot calculate real square root of a negative number.");
+   r=Math.sqrt(a);
+  }
+  else if(t==="cube"){
+   a=val("a"); r=Math.cbrt(a);
+  }
+  else if(t==="power"){
+   a=val("a"); b=val("b"); r=Math.pow(a,b);
+   if(!Number.isFinite(r)) throw Error("Result is too large or not a real number.");
+  }
+  else if(t==="factorial"){
+   a=val("a");
+   if(!Number.isInteger(a)||a<0||a>170) throw Error("Enter a whole number from 0 to 170.");
+   r=1; for(let i=2;i<=a;i++) r*=i;
+  }
+  else if(t==="random"){
+   a=val("a"); b=val("b");
+   if(!Number.isInteger(a)||!Number.isInteger(b)||a>b) throw Error("Enter whole numbers; minimum must not exceed maximum.");
+   r=Math.floor(Math.random()*(b-a+1))+a;
+  }
+  if(typeof r==="number") r=Number(r.toPrecision(12));
+  show(r);
+ }catch(e){result.textContent="Error: "+e.message;}
+}
+renderTool();
+</script>
+</body>
+</html>
